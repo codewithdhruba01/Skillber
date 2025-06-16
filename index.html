@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Skills</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">My Skills</h1>
+        <p class="subtitle">Expertise and technologies I work with</p>
+        
+        <div class="skills-grid" id="skills-container">
+            <!-- Skills will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <script>
+      (function() {
+        const popup = document.createElement("div");
+        popup.innerHTML = "Created by <strong>Dhrubaraj Pati</strong>";
+        Object.assign(popup.style, {
+          position: "fixed",
+          bottom: "20px",
+          left: "20px",
+          backgroundColor: "rgba(0, 0, 0, 0.7)",
+          color: "#fff",
+          padding: "8px 12px",
+          borderRadius: "8px",
+          fontSize: "14px",
+          zIndex: "1000",
+          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+          opacity: "0",
+          transform: "translateY(10px)",
+          transition: "opacity 0.5s ease, transform 0.5s ease"
+        });
+
+        document.body.appendChild(popup);
+
+        requestAnimationFrame(() => {
+          popup.style.opacity = "1";
+          popup.style.transform = "translateY(0)";
+        });
+
+        setTimeout(() => {
+          popup.style.opacity = "0";
+          popup.style.transform = "translateY(10px)";
+          setTimeout(() => popup.remove(), 500);
+        }, 5000);
+      })();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
